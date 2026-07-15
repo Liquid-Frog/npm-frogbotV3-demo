@@ -12,19 +12,6 @@ jobs:
     runs-on: ubuntu-latest
     environment: frogbot
     steps:
-      - uses: actions/checkout@v4
-        with:
-          ref: ${{ github.event.pull_request.head.sha }}
-      - uses: actions/setup-node@v4
-        with:
-          node-version: '20'
-      - uses: jfrog/setup-jfrog-cli@v4
-        env:
-          JF_URL: ${{ vars.JF_URL }}
-        with:
-          oidc-provider-name: Liquid-Frog/npm-frogbotV3-demo@github
-      - run: jf npmc --repo-resolve=liquid-npm
-      - run: jf npm ci
       - uses: jfrog/frogbot@v3
         env:
           JF_URL: ${{ vars.JF_URL }}
