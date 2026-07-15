@@ -12,10 +12,17 @@ jobs:
     runs-on: ubuntu-latest
     environment: frogbot
     steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha }}
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      - run: npm ci
       - uses: jfrog/frogbot@v3
         env:
           JF_URL: ${{ vars.JF_URL }}
           JF_GIT_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           JF_INCLUDE_ALL_VULNERABILITIES: "TRUE"
         with:
-          oidc-provider-name: Liquid-Frog/npm-frogbotV3-demo@github 
+          oidc-provider-name: Liquid-Frog/npm-frogbotV3-demo@github
