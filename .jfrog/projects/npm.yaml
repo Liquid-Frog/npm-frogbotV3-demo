@@ -1,0 +1,8 @@
+version: 1
+type: npm
+resolver:
+    repo: liquid-npm
+    serverId: LiquidJedi
+deployer:
+    repo: liquid-npm
+    serverId: LiquidJedi
