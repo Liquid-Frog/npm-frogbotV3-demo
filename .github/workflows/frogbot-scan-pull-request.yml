@@ -18,7 +18,13 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: '20'
-      - run: npm ci
+      - uses: jfrog/setup-jfrog-cli@v4
+        env:
+          JF_URL: ${{ vars.JF_URL }}
+        with:
+          oidc-provider-name: Liquid-Frog/npm-frogbotV3-demo@github
+      - run: jf npmc --repo-resolve=liquid-npm
+      - run: jf npm ci
       - uses: jfrog/frogbot@v3
         env:
           JF_URL: ${{ vars.JF_URL }}
