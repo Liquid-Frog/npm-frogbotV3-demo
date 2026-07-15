@@ -16,5 +16,6 @@ jobs:
         env:
           JF_URL: ${{ vars.JF_URL }}
           JF_GIT_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          JF_INCLUDE_ALL_VULNERABILITIES: "TRUE"
         with:
-          oidc-provider-name: Liquid-Frog/npm-frogbotV3-demo@github
+          oidc-provider-name: Liquid-Frog/npm-frogbotV3-demo@github 
