@@ -1,0 +1,10 @@
+params:
+  git:
+    repoName: npm-frogbotV3-demo
+    branches:
+      - main
+  scan:
+    projects:
+      - workingDirs:
+          - "."
+        installCommand: "npm ci"
