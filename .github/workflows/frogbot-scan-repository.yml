@@ -23,6 +23,7 @@ jobs:
           JF_URL: ${{ vars.JF_URL }}
           JF_GIT_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           JF_GIT_BASE_BRANCH: ${{ matrix.branch }}
+          JFROG_CLI_LOG_LEVEL: DEBUG
           JF_USE_CONFIG_PROFILE: "false"
         with:
           oidc-provider-name: Liquid-Frog/npm-frogbotV3-demo@github
